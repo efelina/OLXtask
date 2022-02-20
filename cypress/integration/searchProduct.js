@@ -10,10 +10,11 @@ describe('Search product', () => {
         .type('JavaScript{enter}')
         cy.get('tbody').contains('JavaScript').first().click()
         Cypress.on('uncaught:exception', (err) => {
-            if (err.message.includes(`Cannot set properties of undefined (setting 'status')`)) {
+            if (err.message.includes(`Cannot set properties of undefined (setting 'status')` || `Cannot read properties null (reading 'style')` )) {
               return false
             }        
           })
+
         
     })
 })
